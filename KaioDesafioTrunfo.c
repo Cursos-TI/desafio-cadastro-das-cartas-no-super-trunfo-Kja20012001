@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main(){
-    
+    //Declaração das variáveis
+
     char estado1, estado2;
     char codigo1[4], codigo2[4];
     char nomeCidade1[50], nomeCidade2[50];
@@ -13,7 +14,7 @@ int main(){
     float pibPerCapita1,pibPerCapita2;
     float superPoder1, superPoder2;
 
-    //leitura de carta 
+    // *** CADASTRO DA CARTA 1 ***
 
     printf("*** Cadastro de Carta 1 ***\n");
 
@@ -43,7 +44,7 @@ int main(){
     
     printf("\n");
     
-    
+    // *** CADASTRO DA CARTA 2 ***
     
     printf("*** Cadastro de Carta 2 ***\n");
     
@@ -68,7 +69,7 @@ int main(){
     printf("Números de Pontos Turísticos:");
     scanf(" %d",&pontosTuristico2);
     
-    // Calculos 
+    // Calculo da densidade populacional e PIB per capita
     densidade1 = populacao1 / area1;
     densidade2 = populacao2 / area2;
 
@@ -113,9 +114,9 @@ int main(){
     printf(" Super Poder: %.2f\n",superPoder2);
 
 
-    printf("*** Comparação de Cartas ***\n");
+   // printf("*** Comparação de Cartas ***\n");
 
-    printf("População: Carta %d venceu (%d)\n", 
+  /*  printf("População: Carta %d venceu (%d)\n", 
         populacao1 > populacao2 ? 1 : 2, 
         populacao1 > populacao2 ? 1 : 0);
 
@@ -141,10 +142,39 @@ int main(){
 
     printf("Super Poder: Carta %d venceu (%d)\n", 
         superPoder1 > superPoder2 ? 1 : 2, 
-        superPoder1 > superPoder2 ? 1 : 0);
+        superPoder1 > superPoder2 ? 1 : 0);           */
 
 
 
+      //  COMPARAÇÃO POR POPULAÇÃO 
+
+  /*  printf("Comparação de cartas (A tributos: População)\n");
+    printf("Carta 1 : %s (%c): %lu Habitantes\n", nomeCidade1,estado1,populacao1);
+    printf("Carta 2 : %s (%c): %lu Habitantes\n", nomeCidade2,estado2,populacao2);
+        
+    if(populacao1>populacao2) { 
+        printf("Resultado: Carta 1 (%s) Venceu!\n",nomeCidade1);
+        } else if(populacao2>populacao1) {
+             printf("Resultado: Carta 2 (%s) Venceu!\n",nomeCidade2);
+            } else {
+                printf("Resultado: Empate! As Duas Cidades Possuem a Mesma Pontuação,\n");   */
+
+
+
+    printf("*** Comparação de Cartas ***\n");
+
+    // COMPARAÇÃO POR DENSIDADE POPULACIONAL 
+    printf("Comparação de cartas (Atributo: Densidade Populacional)\n");
+    printf("Carta 1 : %s (%c): %.2f hab/km²\n", nomeCidade1, estado1, densidade1);
+    printf("Carta 2 : %s (%c): %.2f hab/km²\n", nomeCidade2, estado2, densidade2);
+    
+    if (densidade1 < densidade2) {
+    printf("Resultado: Carta 1 (%s) Venceu!\n", nomeCidade1);
+        } else if (densidade2 < densidade1) {
+    printf("Resultado: Carta 2 (%s) Venceu!\n", nomeCidade2);
+        } else {
+    printf("Resultado: Empate! As duas cidades possuem a mesma densidade.\n");
+        }
 
 
     return 0;
