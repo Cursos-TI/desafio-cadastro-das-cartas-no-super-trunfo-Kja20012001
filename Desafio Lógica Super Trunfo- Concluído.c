@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    //Declaração das variáveis
+    //Declaração das variáveis.
 
     char estado1, estado2;
     char codigo1[4], codigo2[4];
